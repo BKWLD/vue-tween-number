@@ -1,0 +1,35 @@
+{
+  "name": "vue-tween-number",
+  "version": "0.0.1",
+  "description": "A Vue component that tweens changes to it's value.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BKWLD/vue-tween-number.git"
+  },
+  "author": "Bukwild <info@bukwild.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BKWLD/vue-tween-number/issues"
+  },
+  "homepage": "https://github.com/BKWLD/vue-tween-number#readme",
+  "scripts": {
+    "build": "webpack && NODE_ENV=production webpack --progress",
+    "version": "npm run build && git add -A",
+    "postversion": "git push --follow-tags"
+  },
+  "dependencies": {
+    "shifty": "^2.1.2"
+  },
+  "peerDependencies": {
+    "vue": "2.x"
+  },
+  "devDependencies": {
+    "coffee-loader": "^0.8.0",
+    "coffeescript": "^2.0.1",
+    "css-loader": "^0.28.7",
+    "vue-loader": "^13.0.5",
+    "vue-template-compiler": "^2.4.4",
+    "webpack": "^3.6.0"
+  }
+}
