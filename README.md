@@ -13,7 +13,6 @@ Vue.component('tween-num', require('vue-tween-number'));
 ```html
 <tween-num
 	:value='10'
-
 	:initial='0'
 	:duration='500'
 	easing='easeOutQuart'>
