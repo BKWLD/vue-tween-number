@@ -59,6 +59,6 @@ module.exports =
 				duration: @duration
 
 				# Update the outputted value
-				step: (state) => console.log @output
+				step: (state) => @output = @formatter state.num
 
 </script>
