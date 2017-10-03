@@ -257,17 +257,16 @@ module.exports = {
       output: this.initial
     };
   },
+  // Stop and destroy tween
+  destroyed: function() {
+    return this.reset();
+  },
   // Tween the value it changes
   watch: {
     value: {
       immediate: true,
       handler: function() {
-        var ref;
-        if ((ref = this.tween) != null ? ref.isPlaying() : void 0) {
-          // Stop current tween
-          this.tween.stop();
-        }
-        // Create new tween
+        this.reset();
         this.tween = new shifty.Tweenable;
         return this.tween.tween({
           from: {
@@ -285,6 +284,17 @@ module.exports = {
             return this.output = this.formatter(state.num);
           }
         });
+      }
+    }
+  },
+  // Stop existing tween and cleanup
+  methods: {
+    reset: function() {
+      if (this.tween) {
+        if (this.tween.isPlaying()) {
+          this.tween.stop();
+        }
+        return this.tween.reset();
       }
     }
   }
