@@ -63,6 +63,6 @@ module.exports =
 	# Stop existing tween and cleanup
 	methods: reset: -> if @tween
 		@tween.stop() if @tween.isPlaying()
-		@tween.reset()
+		@tween.dispose()
 
 </script>
