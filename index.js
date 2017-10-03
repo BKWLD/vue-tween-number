@@ -294,7 +294,7 @@ module.exports = {
         if (this.tween.isPlaying()) {
           this.tween.stop();
         }
-        return this.tween.reset();
+        return this.tween.dispose();
       }
     }
   }
