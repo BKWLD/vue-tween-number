@@ -42,15 +42,14 @@ module.exports =
 	# The tweened output value
 	data: -> output: @initial
 
+	# Stop and destroy tween
+	destroyed: -> @reset()
+
 	# Tween the value it changes
 	watch: value:
 		immediate: true
 		handler: ->
-
-			# Stop current tween
-			@tween.stop() if @tween?.isPlaying()
-
-			# Create new tween
+			@reset()
 			@tween = new shifty.Tweenable
 			@tween.tween
 				from: num: @output
@@ -60,5 +59,10 @@ module.exports =
 
 				# Update the outputted value
 				step: (state) => @output = @formatter state.num
+
+	# Stop existing tween and cleanup
+	methods: reset: -> if @tween
+		@tween.stop() if @tween.isPlaying()
+		@tween.reset()
 
 </script>
