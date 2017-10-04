@@ -226,42 +226,34 @@ shifty = __webpack_require__(3);
 
 module.exports = {
   props: {
-    // The value to tween to
     value: Number,
-    // Iniital state
     initial: {
       type: Number,
-      default: 0
+      "default": 0
     },
-    // How long should the tween take
     duration: {
       type: Number,
-      default: 500
+      "default": 500
     },
-    // The easing function
     easing: {
       type: String,
-      default: 'easeOutQuart'
+      "default": 'easeOutQuart'
     },
-    // A function to format the value
     formatter: {
       type: Function,
-      default: function(val) {
+      "default": function(val) {
         return parseInt(val);
       }
     }
   },
-  // The tweened output value
   data: function() {
     return {
       output: this.initial
     };
   },
-  // Stop and destroy tween
   destroyed: function() {
     return this.reset();
   },
-  // Tween the value it changes
   watch: {
     value: {
       immediate: true,
@@ -279,15 +271,15 @@ module.exports = {
             num: this.easing
           },
           duration: this.duration,
-          // Update the outputted value
-          step: (state) => {
-            return this.output = this.formatter(state.num);
-          }
+          step: (function(_this) {
+            return function(state) {
+              return _this.output = _this.formatter(state.num);
+            };
+          })(this)
         });
       }
     }
   },
-  // Stop existing tween and cleanup
   methods: {
     reset: function() {
       if (this.tween) {
