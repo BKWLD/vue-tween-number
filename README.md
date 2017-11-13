@@ -12,9 +12,10 @@ Vue.component('tween-num', require('vue-tween-number'));
 
 ```html
 <tween-num
-	:value='10'
+	:value='2000'
 	:initial='0'
 	:duration='500'
-	easing='easeOutQuart'>
+	easing='easeOutQuart'
+	:formatter='val => val.toLocaleString("en", {minimumFractionDigits: 2, maximumFractionDigits: 2})'>
 </tween-num>
 ```
