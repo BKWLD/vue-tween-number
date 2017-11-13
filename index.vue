@@ -39,8 +39,11 @@ module.exports =
 			type: Function
 			default: (val) -> parseInt val
 
-	# The tweened output value
-	data: -> output: @initial
+	# The tweened value
+	data: -> num: @initial
+
+	# The computed output value
+	computed: output: -> @formatter @num
 
 	# Stop and destroy tween
 	destroyed: -> @reset()
@@ -52,13 +55,13 @@ module.exports =
 			@reset()
 			@tween = new shifty.Tweenable
 			@tween.tween
-				from: num: @output
+				from: num: @num
 				to: num: @value
 				easing: num: @easing
 				duration: @duration
 
-				# Update the outputted value
-				step: (state) => @output = @formatter state.num
+				# Update the tweened value
+				step: (state) => @num = parseFloat state.num
 
 	# Stop existing tween and cleanup
 	methods: reset: -> if @tween
