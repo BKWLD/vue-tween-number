@@ -11,6 +11,10 @@ Vue.component('tween-num', require('vue-tween-number'));
 ```
 
 ```html
+<!-- Simple exampe -->
+<tween-num :value='10'></tween-num>
+
+<!-- Show 2 decimal places and full options -->
 <tween-num
 	:value='2000'
 	:initial='0'
