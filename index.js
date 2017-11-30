@@ -7,7 +7,7 @@
 		exports["vue-tween-number"] = factory(require("shifty"));
 	else
 		root["vue-tween-number"] = factory(root["shifty"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_3__) {
+})(typeof self !== 'undefined' ? self : this, function(__WEBPACK_EXTERNAL_MODULE_3__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -104,7 +104,7 @@ if (Component.esModule && Object.keys(Component.esModule).some(function (key) { 
 
 /* hot reload */
 if (false) {(function () {
-  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), false)
   if (!hotAPI.compatible) return
   module.hot.accept()
@@ -334,7 +334,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-loader/node_modules/vue-hot-reload-api")      .rerender("data-v-6de5ab34", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-6de5ab34", module.exports)
   }
 }
 
