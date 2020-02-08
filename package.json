@@ -1,6 +1,6 @@
 {
   "name": "vue-tween-number",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Vue component that tweens changes to it's value.",
   "main": "index.js",
   "repository": {
