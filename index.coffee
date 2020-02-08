@@ -1,14 +1,4 @@
-<!--
-Tween between values
--->
-
-<template>
-  <span>{{ output }}</span>
-</template>
-
-<!-- ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
-<script lang='coffee'>
+# Tween between values
 import { Tweenable } from 'shifty'
 export default
 
@@ -66,4 +56,5 @@ export default
 		@tween.stop() if @tween.isPlaying()
 		@tween.dispose()
 
-</script>
+	# Render the component
+	render: (create) -> create 'span', @output
