@@ -1,5 +1,8 @@
-# Tween between values
-import { Tweenable } from 'shifty'
+# Something is weird with this package where the wrong version of it was being
+# imported during SSR. Being explicit about it here fixed the issue for me.
+import { shifty } from 'shifty/dist/shifty.node.js'
+
+# Render function that tweens values
 export default
 
 	props:
@@ -41,7 +44,7 @@ export default
 		immediate: true
 		handler: ->
 			@reset()
-			@tween = new Tweenable
+			@tween = new shifty.Tweenable
 			@tween.tween
 				from: num: @num
 				to: num: @value
