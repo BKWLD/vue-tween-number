@@ -100,7 +100,6 @@ var Component = normalizeComponent(
   __vue_module_identifier__
 )
 Component.options.__file = "index.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -112,7 +111,7 @@ if (false) {(function () {
     hotAPI.createRecord("data-v-6de5ab34", Component.options)
   } else {
     hotAPI.reload("data-v-6de5ab34", Component.options)
-' + '  }
+  }
   module.hot.dispose(function (data) {
     disposed = true
   })
@@ -232,13 +231,15 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 /* 2 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-var shifty;
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_shifty__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_shifty___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_shifty__);
 
-shifty = __webpack_require__(3);
 
-module.exports = {
+/* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     value: Number,
     initial: {
@@ -278,7 +279,7 @@ module.exports = {
       immediate: true,
       handler: function() {
         this.reset();
-        this.tween = new shifty.Tweenable;
+        this.tween = new __WEBPACK_IMPORTED_MODULE_0_shifty__["Tweenable"];
         return this.tween.tween({
           from: {
             num: this.num
@@ -309,7 +310,7 @@ module.exports = {
       }
     }
   }
-};
+});
 
 
 /***/ }),

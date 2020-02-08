@@ -3,16 +3,14 @@ Tween between values
 -->
 
 <template>
-
-<span>{{ output }}</span>
-
+  <span>{{ output }}</span>
 </template>
 
 <!-- ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
 <script lang='coffee'>
-shifty = require 'shifty'
-module.exports =
+import { Tweenable } from 'shifty'
+export default
 
 	props:
 
@@ -53,7 +51,7 @@ module.exports =
 		immediate: true
 		handler: ->
 			@reset()
-			@tween = new shifty.Tweenable
+			@tween = new Tweenable
 			@tween.tween
 				from: num: @num
 				to: num: @value
