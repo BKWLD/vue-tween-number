@@ -1,6 +1,4 @@
-# Something is weird with this package where the wrong version of it was being
-# imported during SSR. Being explicit about it here fixed the issue for me.
-import { shifty } from 'shifty/dist/shifty.node.js'
+import { Tweenable } from 'shifty'
 
 # Render function that tweens values
 export default
@@ -44,7 +42,7 @@ export default
 		immediate: true
 		handler: ->
 			@reset()
-			@tween = new shifty.Tweenable
+			@tween = new Tweenable
 			@tween.tween
 				from: num: @num
 				to: num: @value
